@@ -1,0 +1,12 @@
+tbody {
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    align-content: center;
+    margin-left: 10px;
+}
+
+.td {
+    color: purple;
+    font: bold;
+}

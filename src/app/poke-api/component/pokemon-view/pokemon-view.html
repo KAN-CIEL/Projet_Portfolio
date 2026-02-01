@@ -1,0 +1,15 @@
+
+@if (pokemon(); as pokemon) {
+    <div>
+        <h2>{{ pokemon.name.fr }}</h2>
+        <app-pokemon-type-information [type]="pokemon.types"></app-pokemon-type-information>
+        <img [src]="pokemon.sprites.regular" />
+        <div class="Stat">
+            <app-pokemon-statistiques [statistics]="pokemon.stats"></app-pokemon-statistiques>
+            <app-pokemon-resistances [resistances]="pokemon.resistances"></app-pokemon-resistances>
+        </div>
+    </div>
+}
+ 
+
+

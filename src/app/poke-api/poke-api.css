@@ -1,0 +1,9 @@
+.formulaire {
+    color : blue;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    box-shadow: 10px;
+}

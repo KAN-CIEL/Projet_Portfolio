@@ -1,0 +1,30 @@
+@if (statistics(); as stats) {
+    <table class="tableau">
+        <tbody>
+            <tr>
+                <td class="td">HP : </td>
+                <td class="td1">{{stats.hp}}</td>
+            </tr>
+            <tr>
+                <td class="td">ATK : </td>
+                <td class="td1">{{stats.atk}}</td>
+            </tr>
+            <tr>
+                <td class="td">DEF : </td>
+                <td class="td1">{{stats.def}}</td>
+            </tr>
+            <tr>
+                <td class="td">SPE-ATK : </td>
+                <td class="td1">{{stats.spe_atk}}</td>
+            </tr>
+            <tr>
+                <td class="td">SPE-DEF : </td>
+                <td class="td1">{{stats.spe_def}}</td>
+            </tr>
+            <tr>
+                <td class="td">VIT : </td>
+                <td class="td1">{{stats.vit}}</td>
+            </tr>
+        </tbody>
+    </table>
+}

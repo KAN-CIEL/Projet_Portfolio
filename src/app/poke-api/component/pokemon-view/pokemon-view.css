@@ -1,0 +1,12 @@
+h2 {
+    color : purple;
+    font-size: 10;
+}
+
+.Stat {
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
