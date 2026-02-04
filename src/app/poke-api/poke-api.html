@@ -8,8 +8,11 @@
         <input name="pokemon-name" formControlName="pokemonName" class="Input" />
         <button type="submit">Rechercher</button>
     </form>
-    <div>
+    <div *ngIf="pokemonData">
         <app-pokemon-view [pokemon]="pokemonData"></app-pokemon-view>
+    </div>
+    <div *ngIf="pokemonNotExist">
+        <p>Pokemon {{ pokemonForm.value.pokemonName }} non trouvé</p>
     </div>
     
 </main>

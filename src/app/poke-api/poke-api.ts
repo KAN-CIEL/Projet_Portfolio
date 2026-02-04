@@ -4,10 +4,11 @@ import { Pokemon } from './pokemon';
 import { FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms'
 import { TyraDexApiService } from './tyradex-api-services';
 import { PokemonView } from './component/pokemon-view/pokemon-view';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-poke-api',
-  imports: [ReactiveFormsModule, PokemonView],
+  imports: [ReactiveFormsModule, PokemonView, CommonModule],
   templateUrl: './poke-api.html',
   styleUrl: './poke-api.css',
 })
@@ -17,6 +18,7 @@ export class PokeAPI {
   private pokemonService = inject(TyraDexApiService);
 
   pokemonData: Pokemon | undefined;
+  pokemonNotExist = false;
 
   pokemonForm = new FormGroup({
     pokemonName: new FormControl('')
@@ -33,9 +35,13 @@ export class PokeAPI {
       .subscribe(reponse => {
         if (reponse.status === 404) {
           console.error(`Pokémon non trouvé : $(pokemonName`);
+          this.pokemonData = undefined;
+          this.pokemonNotExist = true;
+          return
         }
         console.log('Reponse API :', reponse)
         this.pokemonData = reponse;
+        this.pokemonNotExist = false;
       })
     }
   }
